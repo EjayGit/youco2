@@ -1,7 +1,16 @@
+import { currentUser } from "@clerk/nextjs/server";
+import {db} from '@/utils/dbconnection'
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
 export default async function Quiz(){
 
     async function handleSubmit(e) {
         "use server";
+
+        const user = await currentUser();
+        console.log(user);
+        const email = user?.emailAddresses[0].emailAddress
         
         console.log(e);
         const formValues = {
@@ -118,7 +127,14 @@ export default async function Quiz(){
 
 		console.log(totalCO2);
 
-
+        db.query('INSERT INTO youco2 (co2, name, email) VALUES ($1, $2, $3)', [
+            totalCO2,
+            formValues.userName,
+            email
+        ]);
+        
+        revalidatePath('/profile');
+        redirect('/profile');
     }
 
     return(
