@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 
-export default function JobsChart({ id, income, expenses }) {
+export default function JobsChart() {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
 
