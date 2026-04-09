@@ -15,9 +15,6 @@ export default function MyChart({values, names}){
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
       }
-
-      console.log(names);
-      console.log(values);
   
       chartInstanceRef.current = new Chart(ctx, {
         type: "line",
