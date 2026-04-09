@@ -33,6 +33,9 @@ export default function JobsChart() {
         responsive: true,
         maintainAspectRatio: true,
         scales: {
+          y: {
+            beginAtZero: true
+          },
           x: {
             type: "category",
             ticks: {

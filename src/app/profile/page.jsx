@@ -1,4 +1,4 @@
-import MyChart from "@/components/MyChart"
+import ChartClient from "@/components/ChartClient"
 import { db } from "@/utils/dbconnection"
 import Link from "next/link"
 import { currentUser } from '@clerk/nextjs/server';
@@ -13,31 +13,35 @@ export default async function Profile(){
         email
     ]);
     // console.log(userRows);
-    let values = [];
-    let names = [];
+    let uservalues = [];
+    let usernames = [];
     for (let i = 0; i < userRows.length; i++) {
-        values.push(userRows[i].co2);
-        names.push(userRows[i].name);
+        uservalues.push(userRows[i].co2);
+        usernames.push(userRows[i].name);
     }
-    // console.log(values);
-    // console.log(names);
+    // console.log(uservalues);
+    // console.log(usernames);
 
    let { rows: allRows } = await db.query(`SELECT * FROM youco2 ORDER BY id DESC LIMIT 20`);
     // console.log(userRows);
-    values = [];
-    names = [];
+    let allvalues = [];
+    let allnames = [];
     for (let i = 0; i < allRows.length; i++) {
-        values.push(allRows[i].co2);
-        names.push(allRows[i].name);
+        allvalues.push(allRows[i].co2);
+        allnames.push(allRows[i].name);
     }
-    // console.log(values);
-    // console.log(names);
+    // console.log(allvalues);
+    // console.log(allnames);
  
 
     return(
         <>
-            <MyChart values={values} names={names} />
-            <button>Toggle</button>
+            <ChartClient
+                allvalues={allvalues}
+                allnames={allnames}
+                uservalues={uservalues}
+                usernames={usernames}
+            />
             <Link href={`/quiz`}>New Entry</Link>
         </>
     )
