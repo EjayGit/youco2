@@ -9,12 +9,12 @@ export default async function Quiz(){
         "use server";
 
         const user = await currentUser();
-        console.log(user);
+        // console.log(user?.username);
         const email = user?.emailAddresses[0].emailAddress
         
         console.log(e);
         const formValues = {
-            userName: e.get('userName'),
+            userName: user?.username,
             energyUseage: e.get('energyUsage'),
             elecHeat: e.get('elecHeat'),
             oilHeat: e.get('oilHeat'),
@@ -125,7 +125,7 @@ export default async function Quiz(){
         const total = homeCO2 + travelCO2;	
 		const totalCO2 = parseFloat(total.toFixed(2));
 
-		console.log(totalCO2);
+		// console.log(totalCO2);
 
         db.query('INSERT INTO youco2 (co2, name, email) VALUES ($1, $2, $3)', [
             totalCO2,
@@ -140,8 +140,8 @@ export default async function Quiz(){
     return(
         <>
             <form action={handleSubmit} id="co2Form" aria-label="Personal CO2 emmissions form">
-                <label htmlFor="userName">Name</label>          
-                <input id="userName" type="text" name="userName" required aria-label="Name input"/>          
+                {/* <label htmlFor="userName">Name</label>          
+                <input id="userName" type="text" name="userName" required aria-label="Name input"/>           */}
                 <label htmlFor="energyUsage">Home Energy Usage</label>
                 <select id="energyUsage" name='energyUsage'>
                 <option value="l" aria-label="Low home energy user">Low</option>

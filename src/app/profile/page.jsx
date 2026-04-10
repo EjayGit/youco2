@@ -6,7 +6,7 @@ import { currentUser } from '@clerk/nextjs/server';
 export default async function Profile(){
 
     const user = await currentUser();
-    // console.log(user);
+    // console.log(user?.username);
     const email = user?.emailAddresses[0].emailAddress
     // console.log(email);
     let { rows: userRows } = await db.query(`SELECT * FROM youco2 WHERE email = $1 ORDER BY id LIMIT 20`,[
