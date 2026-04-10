@@ -5,14 +5,14 @@ import MyChart from '@/components/MyChart'
 
 export default function ChartClient({uservalues, usernames, allvalues, allnames}){
 
-    const [isTrue, setIsTrue] = useState(false);
+    const [isTrue, setIsTrue] = useState(true);
 
     const toggle = () => setIsTrue(prev => !prev);
 
     return(
         <>
             <MyChart
-                values={isTrue ? uservalues : allvalues} names={isTrue ? usernames : allnames}
+                key={isTrue ? "user" : "all"} values={isTrue ? uservalues : allvalues} names={isTrue ? usernames : allnames}
             />
             <button onClick={toggle}>{isTrue ? "All Users" : "Own Stats"}</button>
         </>
