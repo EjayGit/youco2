@@ -9,7 +9,7 @@ export default async function Profile(){
     // console.log(user);
     const email = user?.emailAddresses[0].emailAddress
     // console.log(email);
-    let { rows: userRows } = await db.query(`SELECT * FROM youco2 WHERE email = $1 ORDER BY id DESC LIMIT 20`,[
+    let { rows: userRows } = await db.query(`SELECT * FROM youco2 WHERE email = $1 ORDER BY id LIMIT 20`,[
         email
     ]);
     // console.log(userRows);
@@ -22,7 +22,7 @@ export default async function Profile(){
     // console.log(uservalues);
     // console.log(usernames);
 
-   let { rows: allRows } = await db.query(`SELECT * FROM youco2 ORDER BY id DESC LIMIT 20`);
+   let { rows: allRows } = await db.query(`SELECT * FROM youco2 ORDER BY id LIMIT 20`);
     // console.log(userRows);
     let allvalues = [];
     let allnames = [];
