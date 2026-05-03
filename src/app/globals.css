@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+/*
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,3 +26,239 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+*/
+
+/* ab css 3-5-2026 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+body {
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  color: #444;
+  line-height: 150%;
+  /* background-image: url(../images/images/Gemini_Generated_Image_r3vlokr3vlokr3vl.png); */
+  /* background-position: center; */
+  /* background-size: cover; */
+}
+
+button,
+select,
+[type="checkbox"],
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type="number"] {
+  cursor: pointer;
+}
+
+main {
+  padding: 5% 8% 8% 8%;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  color: #5fcf4e;
+  font-size: 800%;
+  text-align: center;
+}
+
+h2 {
+  color: #7a7a7a;
+  margin-top: 200px;
+  font-size: 300%;
+  line-height: 150%;
+  text-align: center;
+}
+
+label {
+  text-align: center;
+  line-height: 130%;
+}
+
+legend {
+  font-size: 150%;
+}
+
+form {
+  padding: 5%;
+  background-color: #fafafa;
+  text-align: center;
+  margin: 8% auto 0 auto;
+}
+
+form,
+fieldset {
+  width: 100%;
+  max-width: 600px;
+}
+
+fieldset {
+  padding: 1.6em;
+  margin-bottom: 3em;
+  background-color: #f0fbef;
+}
+
+input {
+  width: 100%;
+  text-align: center;
+}
+
+select#energyUsage {
+  justify-content: center;
+  width: 50%;
+  max-width: 200px;
+}
+
+#userName,
+#energyUsage {
+  margin: 0.6em 0 3em 0;
+}
+
+#heatType {
+  text-align: center;
+}
+
+input,
+select {
+  justify-content: center;
+  display: block;
+  font-size: 120%;
+  padding: 0.5em;
+  background-color: #fff;
+}
+
+[type="checkbox"] {
+  margin: 0.5em 0 0.5em 0;
+}
+
+#heatField {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#heatField span {
+  padding: 2em 0 2em 0;
+  width: 120px;
+}
+
+#travel input {
+  max-width: 150px;
+}
+
+#travel span {
+  padding: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*
+header {
+  text-align: center;
+}
+*/
+
+header {
+  padding: 8px;
+}
+
+/*
+#graph {
+  background-color: #fff;
+}
+*/
+/*
+footer {
+  text-align: center;
+  font-size: 20px;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #73da63;
+  border-top: #0a4e00 6px ridge;
+  font-weight: bold;
+}
+*/
+
+@media screen and (max-width: 600px) {
+  #travel span {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #travel label {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+}
+
+#submit {
+  border-radius: 10px;
+  padding: 15px;
+  border: 4px, ridge, rgb(170, 170, 243) !important;
+  background-color: rgb(151, 213, 255);
+  font-size: large;
+}
+
+#submit:hover {
+  scale: 1.05;
+}
+
+#submit:active {
+  scale: 1;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 500%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 380%;
+  }
+
+  h2 {
+    font-size: 240%;
+  }
+}
+
+label {
+  display: block;
+}
+
+#energyUsage {
+  display: inline-block;
+}
+
+/*
+#resultWrap {
+  margin: 8% 0 0 0;
+}
+
+#resultWrap p {
+  text-align: center;
+  padding: 1em;
+}
+
+#result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #eee;
+  width: 200px;
+  height: 100px;
+  font-size: 200%;
+  margin: 0 auto 15% auto;
+}
+*/

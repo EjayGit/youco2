@@ -1,6 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider, Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import {
+  ClerkProvider,
+  Show,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 import Footer from "@/components/Footer";
 
 const geistSans = Geist({
@@ -39,7 +45,7 @@ export default function RootLayout({ children }) {
               <UserButton />
             </Show>
           </header>
-          {children}
+          <main>{children}</main>
           <Footer />
         </ClerkProvider>
       </body>
